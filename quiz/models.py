@@ -25,7 +25,7 @@ class Answer(models.Model):
 
 class Like(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    quiz = models.ForeignKey('Quiz', on_delete=models.CASCADE)
+    quiz = models.ForeignKey('Quiz', on_delete=models.CASCADE, related_name='likes')
 
     class Meta:
         unique_together = ('user', 'quiz')
@@ -33,7 +33,7 @@ class Like(models.Model):
 
 class Dislike(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    quiz = models.ForeignKey('Quiz', on_delete=models.CASCADE)
+    quiz = models.ForeignKey('Quiz', on_delete=models.CASCADE, related_name='dislikes')
 
     class Meta:
         unique_together = ('user', 'quiz')

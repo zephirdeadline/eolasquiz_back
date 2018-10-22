@@ -6,7 +6,7 @@ from quiz.models import Quiz, Dislike, Like
 
 class LikeSerializer(serializers.ModelSerializer):
     user = serializers.PrimaryKeyRelatedField(read_only=True)
-    quiz = serializers.PrimaryKeyRelatedField(queryset=Quiz.objects.all())
+    quiz = serializers.PrimaryKeyRelatedField(queryset=Quiz.objects.all(), write_only=True)
 
     class Meta:
         model = Like

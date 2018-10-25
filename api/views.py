@@ -12,11 +12,11 @@ from quiz.models import Quiz, Like, Dislike, Question, Answer
 
 
 def question(request, cursor=None, amount=None, id_question=None):
-    return action(request, Question, QuestionSerializer, id_question, cursor=cursor, amount=amount, is_restricted=False, linked_to_user=True)
+    return action(request, Question, QuestionSerializer, id_question, cursor=cursor, amount=amount, is_restricted=False, linked_to_user=False)
 
 
 def answer(request, cursor=None, amount=None, id_answer=None):
-    return action(request, Answer, AnswerSerializer, id_answer, cursor=cursor, amount=amount, is_restricted=False, linked_to_user=True)
+    return action(request, Answer, AnswerSerializer, id_answer, cursor=cursor, amount=amount, is_restricted=False, linked_to_user=False)
 
 
 def quiz(request, cursor=None, amount=None, id_quiz=None):

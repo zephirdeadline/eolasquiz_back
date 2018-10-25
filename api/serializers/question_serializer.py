@@ -11,7 +11,7 @@ class QuestionSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Question
-        fields = ('text', "quiz", 'answers')
+        fields = ('id', 'text', "quiz", 'answers')
 
     def create(self, validated_data, user=None):
         question = Question.objects.create(**validated_data)

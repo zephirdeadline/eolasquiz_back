@@ -8,7 +8,7 @@ class AnswerSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Answer
-        fields = ('text', 'is_correct', 'question')
+        fields = ('id', 'text', 'is_correct', 'question')
 
     def create(self, validated_data, user=None):
         answer = Answer.objects.create(**validated_data)

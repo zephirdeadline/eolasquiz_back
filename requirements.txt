@@ -4,3 +4,4 @@ rest_object=2.2.2
 coveralls
 djangorestframework-jwt
 djoser
+django-cors-headers

@@ -10,10 +10,11 @@ class QuizSerializer(serializers.ModelSerializer):
     questions = QuestionSerializer(many=True, read_only=True)
     dislikes = DislikeSerializer(many=True, read_only=True)
     likes = LikeSerializer(many=True, read_only=True)
+    created_at = serializers.DateField(read_only=True)
 
     class Meta:
         model = Quiz
-        fields = ('name', 'questions', 'likes', 'dislikes')
+        fields = ('id', 'name', 'questions', 'likes', 'dislikes', 'description', 'created_at', 'category', 'difficulty')
 
     def create(self, validated_data, user=None):
         quiz = Quiz.objects.create(**validated_data, user=user)

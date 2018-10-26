@@ -20,7 +20,21 @@ def answer(request, cursor=None, amount=None, id_answer=None):
 
 
 def quiz(request, cursor=None, amount=None, id_quiz=None):
-    return action(request, Quiz, QuizSerializer, id_quiz, cursor=cursor, amount=amount, is_restricted=False, linked_to_user=True)
+    if request.method == 'GET':
+        return action(request, Quiz, QuizSerializer, id_quiz, cursor=cursor, amount=amount, is_restricted=False, linked_to_user=False)
+    else:
+        return action(request, Quiz, QuizSerializer, id_quiz, cursor=cursor, amount=amount, is_restricted=False,
+                      linked_to_user=True)
+
+
+
+def quizadmin(request, cursor=None, amount=None, id_quiz=None):
+    if request.method == 'GET':
+        return action(request, Quiz, QuizSerializer, id_quiz, cursor=cursor, amount=amount, is_restricted=False, linked_to_user=True)
+    else:
+        return action(request, Quiz, QuizSerializer, id_quiz, cursor=cursor, amount=amount, is_restricted=True,
+                      linked_to_user=True)
+
 
 
 def like(request, cursor=None, amount=None, id_like=None):

@@ -1,7 +1,7 @@
 {
 	"_type": "export",
 	"__export_format": 3,
-	"__export_date": "2018-10-22T16:48:24.440Z",
+	"__export_date": "2018-10-26T12:38:13.289Z",
 	"__export_source": "insomnia.desktop.app:v6.0.2",
 	"resources": [
 		{
@@ -151,7 +151,7 @@
 			"isPrivate": false,
 			"metaSortKey": -1540116315956.5,
 			"method": "POST",
-			"modified": 1540216158665,
+			"modified": 1540308211328,
 			"name": "jwt",
 			"parameters": [],
 			"parentId": "fld_b6d468b7411c4fe29785d2bcede52df8",
@@ -402,7 +402,7 @@
 			"isPrivate": false,
 			"metaSortKey": -1540215982085,
 			"method": "GET",
-			"modified": 1540219005803,
+			"modified": 1540311221574,
 			"name": "quiz mine identification",
 			"parameters": [],
 			"parentId": "fld_cd1df3086ce643079b953ecb9b2afbed",
@@ -420,7 +420,7 @@
 			"authentication": {},
 			"body": {
 				"mimeType": "application/json",
-				"text": "[\n\t{\n\t\t\"name\": \"The big quiz\",\n\t\t\"difficulty\": 1,\n\t\t\"category\": \"horse\"\n\t}\n]"
+				"text": "[\n\t{\n\t\t\"name\": \"The big quiz\",\n\t\t\"difficulty\": 1,\n\t\t\"category\": \"horse\",\n\t\t\"description\": \"lol\"\n\t}\n]"
 			},
 			"created": 1540215985346,
 			"description": "",
@@ -439,7 +439,7 @@
 			"isPrivate": false,
 			"metaSortKey": -1540190180568.5,
 			"method": "POST",
-			"modified": 1540223040452,
+			"modified": 1540410091418,
 			"name": "quiz",
 			"parameters": [],
 			"parentId": "fld_cd1df3086ce643079b953ecb9b2afbed",
@@ -468,7 +468,7 @@
 			"isPrivate": false,
 			"metaSortKey": -1540203081326.75,
 			"method": "GET",
-			"modified": 1540224504151,
+			"modified": 1540398726188,
 			"name": "quiz id",
 			"parameters": [],
 			"parentId": "fld_cd1df3086ce643079b953ecb9b2afbed",
@@ -489,15 +489,16 @@
 			"description": "",
 			"headers": [
 				{
+					"disabled": false,
 					"id": "pair_b6e1b3ceec3a46b7850114955f037082",
 					"name": "Authorization",
-					"value": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6InVzZXIyIiwiZXhwIjoxNTQ4ODU1ODk4LCJlbWFpbCI6IiIsIm9yaWdfaWF0IjoxNTQwMjE1ODk4fQ.YPHBDqvIM5VamyWmlKzVmqLruqIwbNWfhFJxvqdvObE"
+					"value": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6InVzZXIyIiwiZXhwIjoxNTQ5MDQwNjMxLCJlbWFpbCI6IiIsIm9yaWdfaWF0IjoxNTQwNDAwNjMxfQ.odvO_Om0_KGQJq6jRDGSzcxgjozdCoTYCa20fUtaUHI"
 				}
 			],
 			"isPrivate": false,
 			"metaSortKey": -1540209531705.875,
 			"method": "GET",
-			"modified": 1540226579678,
+			"modified": 1540401181825,
 			"name": "quiz all",
 			"parameters": [],
 			"parentId": "fld_cd1df3086ce643079b953ecb9b2afbed",
@@ -571,7 +572,7 @@
 			"isPrivate": false,
 			"metaSortKey": -1540218995316,
 			"method": "POST",
-			"modified": 1540221956933,
+			"modified": 1540312291886,
 			"name": "like",
 			"parameters": [],
 			"parentId": "fld_456b6749e13244b6baa56cbe50e289ec",
@@ -645,7 +646,7 @@
 			"isPrivate": false,
 			"metaSortKey": -1540217488700.5,
 			"method": "POST",
-			"modified": 1540222906380,
+			"modified": 1540312790593,
 			"name": "dislike",
 			"parameters": [],
 			"parentId": "fld_826e0fcf1cc344b59ba9aa1be09f4690",
@@ -711,7 +712,7 @@
 			"isPrivate": false,
 			"metaSortKey": -1540220946362,
 			"method": "GET",
-			"modified": 1540222960821,
+			"modified": 1540390663442,
 			"name": "answer",
 			"parameters": [],
 			"parentId": "fld_ad280bba98154fc283ff10a05dcafc66",
@@ -721,7 +722,7 @@
 			"settingRebuildPath": true,
 			"settingSendCookies": true,
 			"settingStoreCookies": true,
-			"url": "http://127.0.0.1:8000/api/question/",
+			"url": "http://127.0.0.1:8000/api/answer/6",
 			"_type": "request"
 		},
 		{
@@ -729,7 +730,7 @@
 			"authentication": {},
 			"body": {
 				"mimeType": "application/json",
-				"text": "[\n\t{\n\t\t\"text\": \"A basic horse\",\n\t\t\"is_correct\": false,\n\t\t\"question\": 2\n\t}\n]"
+				"text": "[\n\t{\n\t\t\"text\": \"A special horse\",\n\t\t\"is_correct\": false,\n\t\t\"question\": 2\n\t}\n]"
 			},
 			"created": 1540222963417,
 			"description": "",
@@ -748,7 +749,7 @@
 			"isPrivate": false,
 			"metaSortKey": -1540219970839,
 			"method": "POST",
-			"modified": 1540226567719,
+			"modified": 1540411648510,
 			"name": "answer (Copy)",
 			"parameters": [],
 			"parentId": "fld_ad280bba98154fc283ff10a05dcafc66",
@@ -759,6 +760,43 @@
 			"settingSendCookies": true,
 			"settingStoreCookies": true,
 			"url": "http://127.0.0.1:8000/api/answer/",
+			"_type": "request"
+		},
+		{
+			"_id": "req_5112fa9f5cd544f5b71b1fa0d8b04f71",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/json",
+				"text": "\n\t{\n\t\t\"text\": \"A hippie horse\",\n\t\t\"is_correct\": false,\n\t\t\"question\": 2\n\t}\n"
+			},
+			"created": 1540390433671,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_831bd776be16452fa44266e9f32aa842",
+					"name": "Authorization",
+					"value": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6InVzZXIyIiwiZXhwIjoxNTQ4ODU1ODk4LCJlbWFpbCI6IiIsIm9yaWdfaWF0IjoxNTQwMjE1ODk4fQ.YPHBDqvIM5VamyWmlKzVmqLruqIwbNWfhFJxvqdvObE"
+				},
+				{
+					"id": "pair_523a22b1ab424502818f56895013e7eb",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1540219483077.5,
+			"method": "PUT",
+			"modified": 1540557205116,
+			"name": "answer (Copy) (Copy)",
+			"parameters": [],
+			"parentId": "fld_ad280bba98154fc283ff10a05dcafc66",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://127.0.0.1:8000/api/answer/6",
 			"_type": "request"
 		},
 		{
@@ -800,7 +838,7 @@
 			"authentication": {},
 			"body": {
 				"mimeType": "application/json",
-				"text": "[{\n\t\"text\": \"What is a famous hose?\",\n\t\"quiz\": 1\n}]"
+				"text": "[{\n\t\t\"text\": \"What is a famous hose?\",\n\t\t\"quiz\": 1\n}]"
 			},
 			"created": 1540222931236,
 			"description": "",
@@ -819,7 +857,7 @@
 			"isPrivate": false,
 			"metaSortKey": -1540221921885,
 			"method": "POST",
-			"modified": 1540226417514,
+			"modified": 1540409916174,
 			"name": "question (Copy)",
 			"parameters": [],
 			"parentId": "fld_14c9aa4a9361486c8c182d15b0f3e553",

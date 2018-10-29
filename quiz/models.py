@@ -39,3 +39,11 @@ class Dislike(models.Model):
 
     class Meta:
         unique_together = ('user', 'quiz')
+
+
+class Result(models.Model):
+    uniq_id = models.CharField(max_length=64, unique=True)
+    quiz = models.ForeignKey('Quiz', on_delete=models.DO_NOTHING)
+    score = models.FloatField()
+
+

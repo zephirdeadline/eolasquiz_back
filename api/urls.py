@@ -10,6 +10,8 @@ urlpatterns = [
     path('result/', views.result),
     path('result/<id_result>', views.result),
 
+    path('allresult/<id_quiz>', views.all_result),
+
     path('fullquiz/', views.fullquiz),
     path('fullquiz/<int:id_quiz>', views.fullquiz),
 

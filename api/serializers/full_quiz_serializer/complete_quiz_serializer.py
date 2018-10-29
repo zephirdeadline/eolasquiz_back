@@ -4,7 +4,7 @@ from api.serializers.dislike_serializer import DislikeSerializer
 from api.serializers.full_quiz_serializer.complete_question_serializer import CompleteQuestionSerializer
 from api.serializers.like_serializer import LikeSerializer
 from api.serializers.question_serializer import QuestionSerializer
-from quiz.models import Quiz, Question, Answer, Like
+from quiz.models import Quiz, Question, Answer, Like, Result
 
 
 class CompleteQuizSerializer(serializers.ModelSerializer):
@@ -54,6 +54,11 @@ class CompleteQuizSerializer(serializers.ModelSerializer):
         for dislike in dislikes:
             dislike.quiz = quiz
             dislike.save()
+
+        results = Result.objects.filter(quiz=instance)
+        for result in results:
+            result.quiz = quiz
+            result.save()
 
         instance.delete()
 

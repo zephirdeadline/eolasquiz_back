@@ -22,6 +22,11 @@ def question(request, cursor=None, amount=None, id_question=None):
 
 
 @api_view(['GET'])
+def all_result(request, id_quiz):
+    return Response(ResultSerializer(Result.objects.filter(quiz_id=id_quiz), many=True).data)
+
+
+@api_view(['GET'])
 def get_result(request, id_result):
     try:
         result = Result.objects.get(uniq_id=id_result)

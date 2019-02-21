@@ -25,7 +25,7 @@ SECRET_KEY = 'egi)1_hx23$jnsc6&fuotg5zbosp^dvcjj_2gt@%1758xd(-!('
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['quizengine.w4pity.fr']
 
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_CREDENTIALS = True

@@ -11,7 +11,7 @@ class Quiz(models.Model):
     is_moderated = models.BooleanField(default=False)
     name = models.CharField(max_length=64)
     description = models.CharField(max_length=256)
-    created_at = models.DateField(null=True, auto_now=True)
+    created_at = models.DateTimeField(null=True, auto_now=True)
 
 
 class Question(models.Model):

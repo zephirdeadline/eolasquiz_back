@@ -9,7 +9,7 @@ django.setup()
 from quiz.models import Quiz, Question, Answer
 
 
-with open("question_bank.tsv", "r") as f:
+with open("questions2000_4000.tsv", "r") as f:
     data = f.readlines()
     current_quiz = None
     for line in data:

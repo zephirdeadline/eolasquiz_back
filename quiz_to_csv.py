@@ -5,7 +5,7 @@ import mechanicalsoup
 import requests
 
 urls = []
-for i in range(0,1000):
+for i in range(4000,10000):
     urls.append('https://api-digischool.kontinium.com/access/user/quiz/'+str(i)+'?embed=display')
 
 # for validate : https://api-digischool.kontinium.com/access/user/questions/{id_questiion}/validate
@@ -44,11 +44,11 @@ for it, url in enumerate(urls):
                         except Exception as e:
                             temps_res = ''
             result += temps_res
-            print(str(it * 100 / 1000) + ' %')
+            print(str(it * 100 / 6000) + ' %')
     except Exception as e:
         pass
 
-with open('questions.csv', 'w') as file:
+with open('questions2000_10000.csv', 'w') as file:
     file.write(result)
 
 # quiz call : 62

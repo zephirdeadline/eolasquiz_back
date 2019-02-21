@@ -11,4 +11,4 @@ class HomeQuizLast(generics.ListAPIView):
     pagination_class = StandardResultsSetPagination
 
     def get_queryset(self):
-        return Quiz.objects.order_by('created_at')
+        return Quiz.objects.order_by('-created_at')

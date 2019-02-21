@@ -1,11 +1,13 @@
 from django.urls import path
 
 from api import views
+from api.view_classes.home_search import HomeQuizFilter
 
 urlpatterns = [
     path('quiz/', views.quiz),
     path('quiz/<int:id_quiz>', views.quiz),
     path('quiz/<int:cursor>/<int:amount>', views.quiz),
+    path('quiz/find/<value>', HomeQuizFilter.as_view()),
 
     path('result/', views.result),
     path('result/<id_result>', views.result),

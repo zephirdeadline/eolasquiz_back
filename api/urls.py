@@ -1,6 +1,7 @@
 from django.urls import path
 
 from api import views
+from api.view_classes.home_last_n import HomeQuizLast
 from api.view_classes.home_search import HomeQuizFilter
 
 urlpatterns = [
@@ -8,6 +9,7 @@ urlpatterns = [
     path('quiz/<int:id_quiz>', views.quiz),
     path('quiz/<int:cursor>/<int:amount>', views.quiz),
     path('quiz/find/<value>', HomeQuizFilter.as_view()),
+    path('quiz/last/', HomeQuizLast.as_view()),
 
     path('result/', views.result),
     path('result/<id_result>', views.result),

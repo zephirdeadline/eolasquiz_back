@@ -8,11 +8,11 @@ django.setup()
 
 from quiz.models import Quiz, Question, Answer
 
-
-with open("questions2000_4000.tsv", "r") as f:
+Quiz.objects.all().delete()
+with open("questions1_20000.tsv", "r") as f:
     data = f.readlines()
     current_quiz = None
-    for line in data:
+    for line_number, line in enumerate(data):
         line = line.split('\t')
         if line[0] == '':
             continue
@@ -48,4 +48,4 @@ with open("questions2000_4000.tsv", "r") as f:
             answer_object = Answer(text=quiz_anwser, is_correct=False, question=current_question)
             answer_object.save()
             answer_list.append(answer_object)
-
+        print(str( line_number * 100 / len(data)) + ' % ' + str(it))

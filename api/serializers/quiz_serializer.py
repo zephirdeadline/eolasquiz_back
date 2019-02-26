@@ -10,7 +10,7 @@ class QuizSerializer(serializers.ModelSerializer):
     questions = QuestionSerializer(many=True, read_only=True)
     dislikes = DislikeSerializer(many=True, read_only=True)
     likes = LikeSerializer(many=True, read_only=True)
-    created_at = serializers.DateField(read_only=True)
+    created_at = serializers.DateTimeField(read_only=True)
 
     class Meta:
         model = Quiz

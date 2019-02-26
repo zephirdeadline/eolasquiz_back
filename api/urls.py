@@ -1,6 +1,8 @@
 from django.urls import path
 
 from api import views
+from api.view_classes.admin_last_n import AdminQuizLast
+from api.view_classes.admin_search import AdminQuizFilter
 from api.view_classes.home_last_n import HomeQuizLast
 from api.view_classes.home_search import HomeQuizFilter
 
@@ -9,17 +11,19 @@ urlpatterns = [
     path('quiz/<int:id_quiz>', views.quiz),
     path('quiz/<int:cursor>/<int:amount>', views.quiz),
     path('quiz/find/<value>', HomeQuizFilter.as_view()),
+    path('quiz/find/mine/<value>', AdminQuizFilter.as_view()),
     path('quiz/last/', HomeQuizLast.as_view()),
 
     path('result/', views.result),
     path('result/<id_result>', views.result),
 
     path('allresult/<id_quiz>', views.all_result),
+    path('alladminresult/', views.all_admin_result),
 
     path('fullquiz/', views.fullquiz),
     path('fullquiz/<int:id_quiz>', views.fullquiz),
 
-    path('quiz/admin/', views.quizadmin),
+    path('quiz/admin/', AdminQuizLast.as_view()),
     path('quiz/admin/<int:id_quiz>', views.quizadmin),
     path('quiz/admin/<int:cursor>/<int:amount>', views.quizadmin),
     

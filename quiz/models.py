@@ -5,7 +5,7 @@ from django.db import models
 
 
 class Quiz(models.Model):
-    user = models.ForeignKey(User, on_delete=models.DO_NOTHING)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     category = models.CharField(max_length=64)
     difficulty = models.IntegerField()
     is_moderated = models.BooleanField(default=False)
@@ -43,7 +43,7 @@ class Dislike(models.Model):
 
 class Result(models.Model):
     uniq_id = models.CharField(max_length=64, unique=True)
-    quiz = models.ForeignKey('Quiz', on_delete=models.DO_NOTHING)
+    quiz = models.ForeignKey('Quiz', on_delete=models.CASCADE)
     score = models.FloatField()
 
 

@@ -27,6 +27,11 @@ def all_result(request, id_quiz):
 
 
 @api_view(['GET'])
+def all_admin_result(request):
+    return Response(ResultSerializer(Result.objects.filter(quiz__user=request.user)[:10], many=True).data)
+
+
+@api_view(['GET'])
 def get_result(request, id_result):
     try:
         result = Result.objects.get(uniq_id=id_result)

@@ -45,5 +45,6 @@ class Result(models.Model):
     uniq_id = models.CharField(max_length=64, unique=True)
     quiz = models.ForeignKey('Quiz', on_delete=models.CASCADE)
     score = models.FloatField()
+    date_done = models.DateTimeField(auto_now=True)
 
 

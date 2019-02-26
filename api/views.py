@@ -28,7 +28,7 @@ def all_result(request, id_quiz):
 
 @api_view(['GET'])
 def all_admin_result(request):
-    return Response(ResultSerializer(Result.objects.filter(quiz__user=request.user)[:10], many=True).data)
+    return Response(ResultSerializer(Result.objects.filter(quiz__user=request.user).order_by('-date_done')[:10], many=True).data)
 
 
 @api_view(['GET'])

@@ -1,7 +1,21 @@
-from django.contrib.auth.models import User
+from django.contrib.auth.models import AbstractUser
 from django.db import models
 
 # Create your models here.
+
+
+class Message(models.Model):
+    user_from = models.ForeignKey('User', on_delete=models.CASCADE, related_name="user_from")
+    user_to = models.ForeignKey('User', on_delete=models.CASCADE, related_name="user_to")
+    content = models.TextField()
+    subject = models.CharField(max_length=200)
+
+
+class User(AbstractUser):
+    licence_type = models.CharField(max_length=200)
+    licence = models.CharField(max_length=200)
+    expire = models.DateField()
+    boss = models.ForeignKey('User', models.CASCADE)
 
 
 class Quiz(models.Model):

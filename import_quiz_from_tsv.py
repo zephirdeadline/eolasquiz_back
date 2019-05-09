@@ -9,7 +9,7 @@ django.setup()
 from quiz.models import Quiz, Question, Answer
 
 Quiz.objects.all().delete()
-with open("questions1_20000.tsv", "r") as f:
+with open("questions1_20000.tsv", "r", encoding="utf8") as f:
     data = f.readlines()
     current_quiz = None
     for line_number, line in enumerate(data):

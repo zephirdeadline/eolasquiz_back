@@ -15,7 +15,7 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
+AUTH_USER_MODEL = 'quiz.User'
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
@@ -37,25 +37,17 @@ CORS_ORIGIN_WHITELIST = (
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework.authentication.TokenAuthentication',
-        'rest_framework_jwt.authentication.JSONWebTokenAuthentication'
     ),
 }
 
 
-'''
-JWT setting for authentification
-'''
-JWT_AUTH = {
-    'JWT_EXPIRATION_DELTA': datetime.timedelta(days=100),
-    'JWT_ALLOW_REFRESH': True,
-}
 # Application definition
 
 INSTALLED_APPS = [
     'api',
     'quiz',
     'rest_framework',
-    'rest_framework_jwt',
+    'rest_framework.authtoken',
     'djoser',
     'corsheaders',
     'rest_object',

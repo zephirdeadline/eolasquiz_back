@@ -12,11 +12,13 @@ class Message(models.Model):
 
 
 class User(AbstractUser):
-    licence_type = models.CharField(max_length=200)
-    licence = models.CharField(max_length=200)
-    expire = models.DateField()
-    boss = models.ForeignKey('User', models.CASCADE)
-
+    licence_type = models.CharField(max_length=200, null=True)
+    licence = models.CharField(max_length=200, null=True)
+    expire = models.DateField(null=True)
+    boss = models.ForeignKey('User', models.CASCADE, null=True)
+    USERNAME_FIELD = 'email'
+    email = models.EmailField(unique=True)
+    REQUIRED_FIELDS = []
 
 class Quiz(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)

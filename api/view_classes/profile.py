@@ -15,3 +15,7 @@ class ProfileView(APIView):
         if user.is_valid():
             user.save()
         return Response(user.data)
+
+    def get(self, request):
+        user = UserSerializer(instance=request.user)
+        return Response(user.data)

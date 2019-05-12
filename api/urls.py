@@ -5,6 +5,7 @@ from api.view_classes.admin_last_n import AdminQuizLast
 from api.view_classes.admin_search import AdminQuizFilter
 from api.view_classes.home_last_n import HomeQuizLast
 from api.view_classes.home_search import HomeQuizFilter
+from api.view_classes.liker import LikerView
 from api.view_classes.profile import ProfileView
 
 urlpatterns = [
@@ -16,6 +17,8 @@ urlpatterns = [
     path('quiz/last/', HomeQuizLast.as_view()),
 
     path('profile/', ProfileView.as_view()),
+
+    path('liker/<int:id>', LikerView.as_view()),
 
     path('result/', views.result),
     path('result/<id_result>', views.result),

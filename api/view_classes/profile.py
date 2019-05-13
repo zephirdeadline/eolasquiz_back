@@ -7,11 +7,22 @@ from rest_framework.views import APIView
 from api.serializers.user_serializer import UserSerializer
 
 
+def generateLicence(user):
+    return 'licence:' + str(hash((user.email, user.licence_type)))
+
+
 class ProfileView(APIView):
     permission_classes = (IsAuthenticated,)
 
     def put(self, request):
         user = UserSerializer(instance=request.user, data=request.data)
+        if user.is_valid():
+            user.save()
+        return Response(user.data)
+
+    def patch(self, request):
+        request.user.licence = generateLicence(request.user)
+        user = UserSerializer(instance=request.user, data=request.data, partial=True)
         if user.is_valid():
             user.save()
         return Response(user.data)

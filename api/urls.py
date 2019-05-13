@@ -18,6 +18,8 @@ urlpatterns = [
 
     path('profile/', ProfileView.as_view()),
 
+    path('licence/', ProfileView.as_view()),
+
     path('liker/<int:id>', LikerView.as_view()),
 
     path('result/', views.result),

@@ -6,6 +6,7 @@ from api.view_classes.admin_search import AdminQuizFilter
 from api.view_classes.home_last_n import HomeQuizLast
 from api.view_classes.home_search import HomeQuizFilter
 from api.view_classes.liker import LikerView
+from api.view_classes.messages_view import MessagesView
 from api.view_classes.profile import ProfileView
 
 urlpatterns = [
@@ -50,5 +51,7 @@ urlpatterns = [
     path('dislike/', views.dislike),
     path('dislike/<int:id_dislike>', views.dislike),
     path('dislike/<int:cursor>/<int:amount>', views.dislike),
+
+    path('messages/', MessagesView.as_view()),
 
 ]

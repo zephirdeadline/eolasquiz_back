@@ -20,4 +20,4 @@ class ClassView(MethodSerializerView, generics.ListCreateAPIView):
         return Class.objects.filter(Q(school__manager=self.request.user.created_by) | Q(created_by=self.request.user))
 
     def perform_create(self, serializer):
-        data = 
+        data =

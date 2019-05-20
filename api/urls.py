@@ -6,8 +6,10 @@ from api.view_classes.admin_search import AdminQuizFilter
 from api.view_classes.home_last_n import HomeQuizLast
 from api.view_classes.home_search import HomeQuizFilter
 from api.view_classes.liker import LikerView
-from api.view_classes.messages_view import MessagesView
+from api.view_classes.messages_view import MessagesView, MessagesViewId
 from api.view_classes.profile import ProfileView
+from api.view_classes.classes import ClassView
+from api.view_classes.teacher import TeacherView
 
 urlpatterns = [
     path('quiz/', views.quiz),
@@ -53,5 +55,10 @@ urlpatterns = [
     path('dislike/<int:cursor>/<int:amount>', views.dislike),
 
     path('messages/', MessagesView.as_view()),
+    path('message/<int:pk>', MessagesViewId.as_view()),
+
+    path('classes/', ClassView.as_view()),
+
+    path('teacher/', TeacherView.as_view()),
 
 ]

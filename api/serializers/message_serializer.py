@@ -1,7 +1,7 @@
 from rest_framework import serializers
 
-from api.serializers.user_serializer import UserSerializer
-from quiz.models import Result, Quiz, User, Message
+from api.serializers.user.user_serializer import UserSerializer
+from quiz.models import Message
 
 
 class MessageSerializer(serializers.ModelSerializer):

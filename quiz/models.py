@@ -43,16 +43,31 @@ class UserManager(BaseUserManager):
 
 
 class User(AbstractUser):
+    # boss, student, prof, none
     licence_type = models.CharField(max_length=200, null=True)
     licence = models.CharField(max_length=200, null=True)
     expire = models.DateField(null=True)
-    boss = models.ForeignKey('User', models.CASCADE, null=True)
+    # The prof creator
+    created_by = models.ForeignKey('User', models.CASCADE, null=True)
+    # If the user us a student
+    class_entity = models.ForeignKey('Class', models.CASCADE, null=True)
     USERNAME_FIELD = 'email'
     email = models.EmailField(unique=True)
     username = models.CharField(unique=False, max_length=200)
     REQUIRED_FIELDS = []
 
     objects = UserManager()
+
+
+class Class(models.Model):
+    name = models.CharField(max_length=200)
+    created_by = models.ForeignKey("User", on_delete=models.DO_NOTHING)
+    school = models.ForeignKey('School', on_delete=models.CASCADE)
+
+
+class School(models.Model):
+    name = models.CharField(max_length=200)
+    manager = models.ForeignKey('User', on_delete=models.CASCADE)
 
 
 class Quiz(models.Model):

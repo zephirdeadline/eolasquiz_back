@@ -1,8 +1,11 @@
+import uuid
+
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from api.serializers.user.user_serializer import UserSerializer
+from quiz.models import School
 
 
 def generateLicence(user):
@@ -23,6 +26,7 @@ class ProfileView(APIView):
         user = UserSerializer(instance=request.user, data=request.data, partial=True)
         if user.is_valid():
             user.save()
+            School.objects.create(name=uuid.uuid4(), manager=request.user)
         return Response(user.data)
 
     def get(self, request):

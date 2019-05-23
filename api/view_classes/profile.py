@@ -32,3 +32,8 @@ class ProfileView(APIView):
     def get(self, request):
         user = UserSerializer(instance=request.user)
         return Response(user.data)
+
+    def post(self, request):
+        user = UserSerializer(data=request.data)
+        user.licence = generateLicence(user)
+        return Response(user.data)

@@ -9,7 +9,7 @@ from api.view_classes.liker import LikerView
 from api.view_classes.messages_view import MessagesView, MessagesViewId
 from api.view_classes.profile import ProfileView
 from api.view_classes.classes import ClassView
-from api.view_classes.teacher import TeacherView
+from api.view_classes.user import UserView
 
 urlpatterns = [
     path('quiz/', views.quiz),
@@ -59,6 +59,9 @@ urlpatterns = [
 
     path('classes/', ClassView.as_view()),
 
-    path('teacher/', TeacherView.as_view()),
+    path('user/', UserView.as_view()),
+
+    path('broadcast/', views.broadcast_quiz),
+    path('myresults/', views.get_my_result),
 
 ]

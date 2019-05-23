@@ -4,7 +4,7 @@ from api.serializers.dislike_serializer import DislikeSerializer
 from api.serializers.full_quiz_serializer.complete_question_serializer import CompleteQuestionSerializer
 from api.serializers.like_serializer import LikeSerializer
 from api.serializers.question_serializer import QuestionSerializer
-from quiz.models import Quiz, Question, Answer, Like, Result
+from quiz.models import Quiz, Question, Answer, Like, Result, User
 
 
 class CompleteQuizSerializer(serializers.ModelSerializer):
@@ -18,7 +18,7 @@ class CompleteQuizSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data, user=None):
         questions = validated_data.pop('questions')
-        quiz = Quiz.objects.create(**validated_data, user=user)
+        quiz = Quiz.objects.create(**validated_data, user=user, is_moderated=user.licence_type == 'teacher')
         quiz.save()
         for question in questions:
             answers = question.pop('answers')

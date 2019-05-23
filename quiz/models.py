@@ -108,9 +108,10 @@ class Dislike(models.Model):
 
 
 class Result(models.Model):
-    uniq_id = models.CharField(max_length=64, unique=True)
+    uniq_id = models.CharField(max_length=128, unique=True)
     quiz = models.ForeignKey('Quiz', on_delete=models.CASCADE)
     score = models.FloatField()
     date_done = models.DateTimeField(auto_now=True)
+    user = models.ForeignKey('User', on_delete=models.CASCADE, null=True, blank=True)
 
 
